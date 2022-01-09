@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Employee List
+    </title>
+  </head>
+  <style>
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+  </style>
+  <body>
+    <h1>Employee<h1>
+    <button onclick="location.href='main.html'" type="button" name="HOME" style="float:right;background-color:#00FFFF;height:50px;width:100px">HOME</button>
+    <BR>
+    <HR>
+    <form onsubmit="searchTable(); return false;">
+    <input type="text" id="searchname" placeholder="SEARCH"/><br/>
+    <input type="submit" value="search"></form>
+    <button onclick="location.href='addempl.html'"button type="button" name="ADD" style= "float:right;" >ADD</button>
+    <h3>Employee List</h3>
+    <table id="myEmpT" border=1 class="styled-table">
+      <thead>
+        <tr>
+          <th>Employee Id</th>
+          <th>Employee Name</th>
+          <th>Employee Age</th>
+          </tr>
+      </thead>
+
+      </table>
+      <br>
+      <br>
+      <br>
+        <form onsubmit="deleteData(); return false;">
+        Delete the name:<input type="text" id="deletename" placeholder="Enter the name you want to delete"/><br/>
+        <input type="submit" value="DELETE"></form>
+      <script src="emp.js"></script>
+
+  </body>
+</html>
