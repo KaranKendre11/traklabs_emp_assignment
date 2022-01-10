@@ -6,44 +6,57 @@
       Employee List
     </title>
   </head>
-  <style>
-  .styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-  </style>
+  <link rel="stylesheet" href="table.css">
   <body>
+    <div>
     <h1>Employee<h1>
-    <button onclick="location.href='main.html'" type="button" name="HOME" style="float:right;background-color:#00FFFF;height:50px;width:100px">HOME</button>
+    <button onclick="location.href='navbar.html'" type="button" name="HOME" id="add_btn">HOME</button>
     <BR>
     <HR>
+    </div>
+    <div>
     <form onsubmit="searchTable(); return false;">
-    <input type="text" id="searchname" placeholder="SEARCH"/><br/>
-    <input type="submit" value="search"></form>
-    <button onclick="location.href='addempl.html'"button type="button" name="ADD" style= "float:right;" >ADD</button>
-    <h3>Employee List</h3>
-    <table id="myEmpT" border=1 class="styled-table">
+    <input type="text" id="searchname" placeholder="SEARCH"/>
+    <br>
+    <br>
+    <input type="submit" value="Search">
+   </form>
+   <br>
+   <button onclick="moveFirst()" name="Clear">Clear</button>
+    <button onclick="location.href='addempl.html'"button type="button" name="ADD" style= "float:right;">ADD</button>
+  </div>
+  <br>
+    <h2>Employee List</h2>
+    <div  id = "main">
+    <table id="myEmpT" border=1 class="timecard">
       <thead>
         <tr>
-          <th>Employee Id</th>
+        <!--  <th>Employee Id</th> -->
           <th>Employee Name</th>
           <th>Employee Age</th>
+          <th>Actions</th>
           </tr>
       </thead>
-
       </table>
+    </div>
+    <div style="width:400px; margin:0 auto;display:none" id="editForm">
+    <form onsubmit="editData()"; return false;">
+    Name: <input type="text" id="upname" placeholder="name"/><br>
+    Age:  <input type="text" id="upage" placeholder="age"/>
+    <br>
+    <input type="submit" value="Update">
+    </form>
+    <button onclick="hideForm()" name="hideform">Cancel</button>
+  </div>
       <br>
       <br>
       <br>
-        <form onsubmit="deleteData(); return false;">
-        Delete the name:<input type="text" id="deletename" placeholder="Enter the name you want to delete"/><br/>
-        <input type="submit" value="DELETE"></form>
+      <div style="width:400px; margin:0 auto;">
+        <button onclick="moveFirst()" name="MF">Move First</button>
+        <button onclick="movePrev()" name="MF">Move Prev</button>
+        <button onclick="moveNext()" name="MF">Move Next</button>
+        <button onclick="moveLast()" name="ML">Move Last</button>
+    </div>
       <script src="emp.js"></script>
-
   </body>
 </html>

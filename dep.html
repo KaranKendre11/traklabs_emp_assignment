@@ -6,32 +6,54 @@
       Department List
     </title>
   </head>
+  <link rel="stylesheet" href="table.css">
   <body>
+    <div>
     <h1>Department<h1>
-    <button onclick="location.href='main.html'" type="button" name="HOME" style="float:right;background-color:#00FFFF;height:50px;width:100px">HOME</button>
+    <button onclick="location.href='navbar.html'" type="button" name="HOME" id="add_btn">HOME</button>
     <BR>
     <HR>
-      <form onsubmit="searchTable(); return false;">
-      <input type="text" id="searchname" placeholder="SEARCH"/><br/>
-      <input type="submit" value="search"></form>
-    <button onclick="location.href='addDept.html'"button type="button" name="ADD" style= "float:right;" >ADD</button>
-    <h3>Department List</h3>
-    <table id="myEmpT" border=1 >
-      <thead class="thead-dark">
+    </div>
+    <div>
+    <form onsubmit="searchTable(); return false;">
+    <input type="text" id="searchname" placeholder="SEARCH"/><br><br>
+    <input type="submit" value="search"></form>
+    <br>
+    <button onclick="moveFirst()" name="Clear">Clear</button>
+    <button onclick="location.href='addDept.html'"button type="button" name="ADD" style= "float:right;">ADD</button>
+  </div>
+  <br>
+    <h2>Department List</h2>
+    <div  id = "main">
+    <table id="myEmpT" border=1 class="timecard">
+      <thead>
         <tr>
-          <th>Department Id</th>
+        <!--  <th>Employee Id</th> -->
+          <th>Department id</th>
           <th>Department Name</th>
+          <th>Actions</th>
           </tr>
       </thead>
-
-    </table>
+      </table>
+    </div>
+    <div style="width:400px; margin:0 auto;display:none" id="editForm">
+    <form onsubmit="editData()"; return false;">
+    Id: <input type="text" id="upname" placeholder="Dep ID"/><br>
+    Name:  <input type="text" id="upage" placeholder="Dep Name"/>
     <br>
-    <br>
-    <br>
-      <form onsubmit="deleteData(); return false;">
-      Delete the Department:<input type="text" id="deletename" placeholder="Enter the name you want to delete"/><br/>
-      <input type="submit" value="DELETE"></form>
+    <input type="submit" value="Update">
+    </form>
+    <button onclick="hideForm()" name="hideform">Cancel</button>
+  </div>
+      <br>
+      <br>
+      <br>
+      <div style="width:400px; margin:0 auto;">
+        <button onclick="moveFirst()" name="MF">Move First</button>
+        <button onclick="movePrev()" name="MF">Move Prev</button>
+        <button onclick="moveNext()" name="MF">Move Next</button>
+        <button onclick="moveLast()" name="ML">Move Last</button>
+    </div>
       <script src="dep.js"></script>
-
   </body>
 </html>
