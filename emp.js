@@ -173,7 +173,36 @@
     form.style.display = 'none';
   }
 
+// IMPLEMENTATION OF SORTING function
+ function sortbyage(){
+   getData();
+   for(var i =0;i<arr.length;i++){
+     for(var j = i+1;j<arr.length;j++){
+       if(arr[i].page > arr[j].page){
+         var temp = arr[i]
+         arr[i] = arr[j]
+         arr[j] = temp
+       }
+     }
+   }
+    localStorage.setItem("localData",JSON.stringify(arr))
+    moveFirst()
+ }
 
+ function sortbyname(){
+   getData();
+   for(var i =0;i<arr.length;i++){
+     for(var j = i+1;j<arr.length;j++){
+       if(arr[i].pname > arr[j].pname){
+         var temp = arr[i]
+         arr[i] = arr[j]
+         arr[j] = temp
+       }
+     }
+   }
+    localStorage.setItem("localData",JSON.stringify(arr))
+    moveFirst()
+ }
 
 // DEFAULT FUNCTION TO RUN ON RELOAD OR LAUNCH
    moveFirst()
